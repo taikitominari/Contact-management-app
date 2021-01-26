@@ -1,13 +1,19 @@
 let app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello vue.js!!!',
-    count: 0,
-    user: {
-      lastName: 'Yamada',
-      firistName: 'Taro',
-      prefecture: 'Tokyo'
-    },
-    colors: ['Red', 'Green', 'Blue']
+    message: 'Hello Vue.js!!',
+    url: 'https://jp.vuejs.org/index.html',
+    toggle: true,
+    languages: [
+      'JavaScript',
+      'Ruby',
+      'Python'
+    ]
+  },
+
+  methods: {
+    change: function() {
+      this.message = 'clicked!!!'
+    }
   }
 })
