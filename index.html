@@ -8,13 +8,18 @@
 </head>
 <body>
   <div id="app">
-    <input type="text" v-model="newItem">
-    <button v-on:click="addBtn">追加</button>
+    <form v-on:submit.prevent>
+      <input type="text" v-model="newItem">
+      <button v-on:click="addBtn">追加</button>
+    </form>
     <ul>
-      <li v-for="text in todos">
-        <span>{{ text.item }}</span>
+      <li v-for="(text,index) in todos" class="list_item">
+        <span v-bind:class="{done: text.isDone}">{{ text.item }}</span>
+        <input type="checkbox" v-model="text.isDone">
+        <button v-on:click="deleteBtn(index)">削除</button>
       </li>
     </ul>
+    <p>{{ $data }}</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
