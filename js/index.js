@@ -1,19 +1,19 @@
 let app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!!',
-    url: 'https://jp.vuejs.org/index.html',
-    toggle: true,
-    languages: [
-      'JavaScript',
-      'Ruby',
-      'Python'
-    ]
+    newItem: "",
+    todos: []
   },
-
   methods: {
-    change: function() {
-      this.message = 'clicked!!!'
+    addBtn: function() {
+      if(this.newItem == "") return;
+
+      let todo = {
+        item: this.newItem
+      };
+
+      this.todos.push(todo)
+      this.newItem = "";
     }
   }
 })

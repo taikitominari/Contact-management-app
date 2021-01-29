@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
 <body>
-  
   <div id="app">
-    <p>{{ message }}</p>
-    <a v-if="toggle" v-bind:href="url">Vue.js</a>
-    <button v-on:click="change">click!</button>
+    <input type="text" v-model="newItem">
+    <button v-on:click="addBtn">追加</button>
     <ul>
-      <li v-for="text in languages" :key="text.lang">{{ text }}</li>
+      <li v-for="text in todos">
+        <span>{{ text.item }}</span>
+      </li>
     </ul>
-
-    <input type="text" v-model="message">
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
   <script src="js/index.js"></script>
 </body>
 </html>
