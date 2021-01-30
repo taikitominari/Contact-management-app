@@ -16,8 +16,9 @@ let app = new Vue({
       this.todos.push(todo)
       this.newItem = "";
     },
-    deleteBtn: function(index) {
-      this.todos.splice(index, 1)
+      deleteBtn: function(index) {
+        if(confirm('削除してもよろしいですか？'));
+        this.todos.splice(index, 1)
+      }
     }
-  }
 })
