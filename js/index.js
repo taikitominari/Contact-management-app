@@ -1,24 +1,11 @@
 let app = new Vue({
-  el: '#app',
+	el: '#app',
   data: {
-    newItem: "",
-    todos: []
+  	message: 'Hello Vue.js!'
   },
   methods: {
-    addBtn: function() {
-      if(this.newItem == "") return;
-
-      let todo = {
-        item: this.newItem,
-        isDone: false
-      };
-
-      this.todos.push(todo)
-      this.newItem = "";
-    },
-      deleteBtn: function(index) {
-        if(confirm('削除してもよろしいですか？'));
-        this.todos.splice(index, 1)
-      }
+    clickHandler: function(event) {
+      this.message = this.message.split('').reverse().join('')
     }
+  }
 })
