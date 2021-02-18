@@ -2,26 +2,15 @@ const vm = new Vue ({
   el: '#app',
   data() {
     return {
-      numbers: [],
-      total_num: 0
+      sum: 3000000000
     }
   },
-  // watchオプション
-  watch: {
-    number(value){
-      this.total_num = 0
-      this.number.forEach(number => {
-        this.total_num += number
-      })
+  filters: {
+    numberWithDelimiter(value) {
+      if(!value) return '0'
+      return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
     }
   }
 })
 
 window.vm = vm
-
-// $メソッド
-vm.$watch(function() {
-  return this.message 
-}, function (message) {
-  console.log('変更後の値:' + message)
-})
