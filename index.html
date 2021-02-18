@@ -8,10 +8,11 @@
 </head>
 <body>
   <div id="app">
-    <p v-once>
-      {{message}}
+    <p v-pre>
+      {{ message }}
     </p>
-    <button v-on:click="clickHandler">CLICK</button>
+    <p v-html="message">
+    </p>
   </div>
   
   
