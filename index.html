@@ -8,11 +8,12 @@
 </head>
 <body>
   <div id="app">
-    <button :disabled="button_disabled" @click="log">
-      {{ button_label }}
+    <button v-on:click='clickLog' v-on:mouseenter='hoverLog'>
+      ログ
     </button>
-    <button :disabled="button_disabled">
-      {{ button_label }}
+    <!-- 省略記法 -->
+    <button @click='clickLog' v-on:mouseenter='hoverLog'>
+      ログ
     </button>
   </div>
   

@@ -2,23 +2,18 @@ const vm = new Vue ({
   el: '#app',
   data() {
     return {
-      button_disabled: false
+      message: 'Hello Vue.js'
     }
   },
-  computed: {
-    button_label() {
-      console.log('button_disabled called')
-      return this.button_disabled ? '無効' : '有効'
+  methods: {
+    clickLog(event) {
+      console.log(event)
+      console.log(this.message)
     },
-    now() {
-      return new Date().toTimeString()
+    hoverLog() {
+      console.log('hover')
     }
-  },
-    methods: {
-      log() {
-        console.log(this.now)
-      }
-    }
+  }
  })
 
 window.vm = vm
