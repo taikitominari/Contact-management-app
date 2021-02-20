@@ -8,7 +8,12 @@
 </head>
 <body>
   <div id="app">
-    <p>合計 {{ sum | numberWithDelimiter }}円</p>
+    <button :disabled="button_disabled" @click="log">
+      {{ button_label }}
+    </button>
+    <button :disabled="button_disabled">
+      {{ button_label }}
+    </button>
   </div>
   
   
