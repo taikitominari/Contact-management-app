@@ -8,13 +8,25 @@
 </head>
 <body>
   <div id="app">
-    <button v-on:click='clickLog' v-on:mouseenter='hoverLog'>
-      ログ
-    </button>
-    <!-- 省略記法 -->
-    <button @click='clickLog' v-on:mouseenter='hoverLog'>
-      ログ
-    </button>
+    <!-- DOM要素事態を削除 -->
+    <div>
+      <label>
+        <input type="checkbox" v-model="reserve">予約する
+      </label>
+    </div>
+    <div v-if="reserve">
+      予約日<input type="date">
+    </div>
+
+    <!-- display=noneがついて消える -->
+    <div>
+      <label>
+        <input type="checkbox" v-model="reserve2">予約する
+      </label>
+    </div>
+    <div v-show="reserve2">
+      予約日<input type="date">
+    </div>
   </div>
   
   
