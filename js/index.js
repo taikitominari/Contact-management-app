@@ -1,9 +1,13 @@
-Vue.component( 'list-title' , {
+const ListTitle =  {
   template: `
     <h2>ユーザーリスト</h2>
   `
-})
-Vue.component('user-list', {
+}
+
+const UserList = {
+  components: {
+    'list-title': ListTitle
+  },
   data() {
     return {
       users: [
@@ -25,8 +29,11 @@ Vue.component('user-list', {
     </ul>
   </div>
   `
-})
+}
 
 const vm = new Vue({
   el: '#app',
+  components: {
+    'user-list': UserList
+  }
 })
