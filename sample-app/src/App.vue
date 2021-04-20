@@ -9,7 +9,7 @@
       <v-toolbar-title>マイアドレス帳</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn @click="logout">ログアウト</v-btn>
+        <v-btn text @click="logout">ログアウト</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <SideNav/>
