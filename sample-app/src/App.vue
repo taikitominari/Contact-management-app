@@ -35,8 +35,10 @@ export default {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.setLoginUser(user)
+        if (this.$router.currentRoute.name === 'home') this.$router.push({ name: 'addresses'})
       } else{
         this.deleteLoginUser()
+        this.$router.push({ name: 'home' })
       }
     })
   },
